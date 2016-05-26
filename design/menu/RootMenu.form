@@ -30,6 +30,8 @@
                       <Component id="buttonDaftarPasien" min="-2" pref="200" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="buttonDaftarPegawai" min="-2" pref="200" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonDaftarRekeningPegawai" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="buttonDaftarTingkatOrganisasi" min="-2" pref="200" max="-2" attributes="0"/>
@@ -39,6 +41,8 @@
                       <Component id="buttonDaftarTransaksiKantor" min="-2" pref="200" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="buttonDaftarTransaksiPasien" min="-2" pref="200" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonDaftarPerbankan" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="buttonDaftarRekamMedis" min="-2" pref="200" max="-2" attributes="0"/>
@@ -69,6 +73,7 @@
                           <Component id="buttonDaftarPasien" min="-2" pref="150" max="-2" attributes="0"/>
                           <Component id="buttonDaftarDokterBidan" min="-2" pref="150" max="-2" attributes="0"/>
                           <Component id="buttonDaftarPegawai" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="buttonDaftarRekeningPegawai" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -76,6 +81,7 @@
                           <Component id="buttonDaftarAsset" min="-2" pref="150" max="-2" attributes="0"/>
                           <Component id="buttonDaftarTransaksiKantor" min="-2" pref="150" max="-2" attributes="0"/>
                           <Component id="buttonDaftarTransaksiPasien" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="buttonDaftarPerbankan" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -108,9 +114,6 @@
           <Image iconType="3" name="/com/lib/image32/microsoft-security-essential.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Change Password"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarDokterBidan">
@@ -119,9 +122,6 @@
           <Image iconType="3" name="/com/lib/image32/live-messenger.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Dokter &amp; Bidan"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarPasien">
@@ -130,9 +130,6 @@
           <Image iconType="3" name="/com/lib/image32/relationship.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Pasien"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarPegawai">
@@ -141,9 +138,14 @@
           <Image iconType="3" name="/com/lib/image32/male.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Pegawai"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
+      </Properties>
+    </Component>
+    <Component class="com.lib.palette.button" name="buttonDaftarRekeningPegawai">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/com/lib/image32/payment-creditcard-visa.png"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="Daftar Rekening Pegawai"/>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarTingkatOrganisasi">
@@ -152,9 +154,6 @@
           <Image iconType="3" name="/com/lib/image32/bar-chart.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Tingkat Organisasi"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarAsset">
@@ -163,9 +162,6 @@
           <Image iconType="3" name="/com/lib/image32/test-paper.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Asset"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarTransaksiKantor">
@@ -174,9 +170,6 @@
           <Image iconType="3" name="/com/lib/image32/mac-address-book.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Transaksi Kantor"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarTransaksiPasien">
@@ -185,9 +178,14 @@
           <Image iconType="3" name="/com/lib/image32/address-book.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Transaksi Pasien"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
+      </Properties>
+    </Component>
+    <Component class="com.lib.palette.button" name="buttonDaftarPerbankan">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/com/lib/image32/bank.png"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="Daftar Perbankan"/>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarRekamMedis">
@@ -196,9 +194,6 @@
           <Image iconType="3" name="/com/lib/image32/documents-library.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Rekam Medis"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarHargaLayanan">
@@ -207,9 +202,6 @@
           <Image iconType="3" name="/com/lib/image32/sales-by-payment-method-rep.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Harga &amp; Layanan"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarPasienBPJS">
@@ -218,9 +210,6 @@
           <Image iconType="3" name="/com/lib/image32/webpage.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Pasien BPJS"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
     <Component class="com.lib.palette.button" name="buttonDaftarObat">
@@ -229,9 +218,6 @@
           <Image iconType="3" name="/com/lib/image32/dropbox.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Daftar Obat"/>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="14" style="0"/>
-        </Property>
       </Properties>
     </Component>
   </SubComponents>

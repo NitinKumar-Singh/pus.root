@@ -22,6 +22,7 @@ public class RootMenu extends javax.swing.JPanel {
     }
     
     private void action () {
+        RootMenuAction.BankOptions(buttonDaftarPerbankan);
         RootMenuAction.ChangePassword(buttonChangePassword);
         RootMenuAction.Doc(buttonDaftarDokterBidan);
         RootMenuAction.EmpOptions(buttonDaftarPegawai);
@@ -46,10 +47,12 @@ public class RootMenu extends javax.swing.JPanel {
         buttonDaftarDokterBidan = new com.lib.palette.button();
         buttonDaftarPasien = new com.lib.palette.button();
         buttonDaftarPegawai = new com.lib.palette.button();
+        buttonDaftarRekeningPegawai = new com.lib.palette.button();
         buttonDaftarTingkatOrganisasi = new com.lib.palette.button();
         buttonDaftarAsset = new com.lib.palette.button();
         buttonDaftarTransaksiKantor = new com.lib.palette.button();
         buttonDaftarTransaksiPasien = new com.lib.palette.button();
+        buttonDaftarPerbankan = new com.lib.palette.button();
         buttonDaftarRekamMedis = new com.lib.palette.button();
         buttonDaftarHargaLayanan = new com.lib.palette.button();
         buttonDaftarPasienBPJS = new com.lib.palette.button();
@@ -57,51 +60,45 @@ public class RootMenu extends javax.swing.JPanel {
 
         buttonChangePassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/microsoft-security-essential.png"))); // NOI18N
         buttonChangePassword.setText("Change Password");
-        buttonChangePassword.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         buttonDaftarDokterBidan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/live-messenger.png"))); // NOI18N
         buttonDaftarDokterBidan.setText("Daftar Dokter & Bidan");
-        buttonDaftarDokterBidan.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         buttonDaftarPasien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/relationship.png"))); // NOI18N
         buttonDaftarPasien.setText("Daftar Pasien");
-        buttonDaftarPasien.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         buttonDaftarPegawai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/male.png"))); // NOI18N
         buttonDaftarPegawai.setText("Daftar Pegawai");
-        buttonDaftarPegawai.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
+        buttonDaftarRekeningPegawai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/payment-creditcard-visa.png"))); // NOI18N
+        buttonDaftarRekeningPegawai.setText("Daftar Rekening Pegawai");
 
         buttonDaftarTingkatOrganisasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/bar-chart.png"))); // NOI18N
         buttonDaftarTingkatOrganisasi.setText("Daftar Tingkat Organisasi");
-        buttonDaftarTingkatOrganisasi.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         buttonDaftarAsset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/test-paper.png"))); // NOI18N
         buttonDaftarAsset.setText("Daftar Asset");
-        buttonDaftarAsset.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         buttonDaftarTransaksiKantor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/mac-address-book.png"))); // NOI18N
         buttonDaftarTransaksiKantor.setText("Daftar Transaksi Kantor");
-        buttonDaftarTransaksiKantor.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         buttonDaftarTransaksiPasien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/address-book.png"))); // NOI18N
         buttonDaftarTransaksiPasien.setText("Daftar Transaksi Pasien");
-        buttonDaftarTransaksiPasien.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
+        buttonDaftarPerbankan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/bank.png"))); // NOI18N
+        buttonDaftarPerbankan.setText("Daftar Perbankan");
 
         buttonDaftarRekamMedis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/documents-library.png"))); // NOI18N
         buttonDaftarRekamMedis.setText("Daftar Rekam Medis");
-        buttonDaftarRekamMedis.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         buttonDaftarHargaLayanan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/sales-by-payment-method-rep.png"))); // NOI18N
         buttonDaftarHargaLayanan.setText("Daftar Harga & Layanan");
-        buttonDaftarHargaLayanan.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         buttonDaftarPasienBPJS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/webpage.png"))); // NOI18N
         buttonDaftarPasienBPJS.setText("Daftar Pasien BPJS");
-        buttonDaftarPasienBPJS.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         buttonDaftarObat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/dropbox.png"))); // NOI18N
         buttonDaftarObat.setText("Daftar Obat");
-        buttonDaftarObat.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -120,7 +117,9 @@ public class RootMenu extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonDaftarPasien, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonDaftarPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(buttonDaftarPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonDaftarRekeningPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buttonDaftarTingkatOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -128,7 +127,9 @@ public class RootMenu extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonDaftarTransaksiKantor, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonDaftarTransaksiPasien, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(buttonDaftarTransaksiPasien, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonDaftarPerbankan, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buttonDaftarRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -153,13 +154,15 @@ public class RootMenu extends javax.swing.JPanel {
                             .addComponent(buttonChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(buttonDaftarPasien, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(buttonDaftarDokterBidan, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonDaftarPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buttonDaftarPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonDaftarRekeningPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buttonDaftarTingkatOrganisasi, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(buttonDaftarAsset, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(buttonDaftarTransaksiKantor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonDaftarTransaksiPasien, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buttonDaftarTransaksiPasien, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonDaftarPerbankan, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buttonDaftarRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -182,7 +185,9 @@ public class RootMenu extends javax.swing.JPanel {
     private com.lib.palette.button buttonDaftarPasien;
     private com.lib.palette.button buttonDaftarPasienBPJS;
     private com.lib.palette.button buttonDaftarPegawai;
+    private com.lib.palette.button buttonDaftarPerbankan;
     private com.lib.palette.button buttonDaftarRekamMedis;
+    private com.lib.palette.button buttonDaftarRekeningPegawai;
     private com.lib.palette.button buttonDaftarTingkatOrganisasi;
     private com.lib.palette.button buttonDaftarTransaksiKantor;
     private com.lib.palette.button buttonDaftarTransaksiPasien;

@@ -21,6 +21,74 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 public class RootMenuConfig {
     
     /**
+     * Start -> open db bank
+     */
+    public static void BankDb () {
+        String OpenPanel, title;
+        OpenPanel = "BankDb";
+        title = "Daftar Perbankan";
+        
+        DialogLog.setOpenPanel(OpenPanel);
+        MessageLog.setTitle(title);
+        
+        RunDialogWebLookAndFeel();
+    }
+    /**
+     * End -> open db bank
+     */
+    
+    /**
+     * Start -> open edit form for db bank
+     */
+    public static void BankEdit () {
+        String OpenPanel, title;
+        OpenPanel = "BankEdit";
+        title = "Edit Perbankan";
+        
+        DialogLog.setOpenPanel(OpenPanel);
+        MessageLog.setTitle(title);
+        
+        RunDialogWebLookAndFeel();
+    }
+    /**
+     * End -> open edit form db bank
+     */
+    
+    /**
+     * Start -> open new input form for db bank
+     */
+    public static void BankNew () {
+        String OpenPanel, title;
+        OpenPanel = "BankNew";
+        title = "Reg. Perbankan";
+        
+        DialogLog.setOpenPanel(OpenPanel);
+        MessageLog.setTitle(title);
+        
+        RunDialogWebLookAndFeel();
+    }
+    /**
+     * End -> open new input form for db bank
+     */
+    
+    /**
+     * Start -> open bank's options
+     */
+    public static void BankOptions () {
+        String OpenPanel, title;
+        OpenPanel = "BankOptions";
+        title = "Perbankan";
+        
+        DialogLog.setOpenPanel(OpenPanel);
+        MessageLog.setTitle(title);
+        
+        RunDialogNimbusLookAndFeel();
+    }
+    /**
+     * End -> open bank's options
+     */
+    
+    /**
      * Start -> change password
      */
     public static void ChangePassword () {

@@ -8,6 +8,10 @@ package config.dialog;
 import com.lib.logs.DialogLog;
 import com.lib.views.ViewDialog;
 import com.lib.views.ViewPanel;
+import design.content.BankDb;
+import design.content.BankEdit;
+import design.content.BankNew;
+import design.content.BankOptions;
 import design.content.ChangePassword;
 import design.content.Doc;
 import design.content.DocEmpty;
@@ -46,6 +50,54 @@ public class RootDialogConfig {
     private static final Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
     /**
      * End -> set fields
+     */
+    
+    /**
+     * Start -> open db bank
+     */
+    private static void OpenBankDb (Dialog dialog, JPanel MainPanel) {
+        BankDb bankDb;
+        bankDb = new BankDb(dialog);
+        ViewPanel.AddPanel(MainPanel, bankDb);
+    }
+    /**
+     * End -> open db bank
+     */
+    
+    /**
+     * Start -> open edit form for db_bank
+     */
+    private static void OpenBankEdit (Dialog dialog, JPanel MainPanel) {
+        BankEdit bankEdit;
+        bankEdit = new BankEdit(dialog);
+        ViewPanel.AddPanel(MainPanel, bankEdit);
+    }
+    /**
+     * End -> open edit form for db_bank
+     */
+    
+    /**
+     * Start -> open new entry db_bank
+     */
+    private static void OpenBankNew (Dialog dialog, JPanel MainPanel) {
+        BankNew bankNew;
+        bankNew = new BankNew(dialog);
+        ViewPanel.AddPanel(MainPanel, bankNew);
+    }
+    /**
+     * End -> open new entry db_bank
+     */
+    
+    /**
+     * Start -> open bank's options
+     */
+    private static void OpenBankOptions (Dialog dialog, JPanel MainPanel) {
+        BankOptions bankOptions;
+        bankOptions = new BankOptions(dialog);
+        ViewPanel.AddPanel(MainPanel, bankOptions);
+    }
+    /**
+     * End -> open bank's options
      */
     
     /**
@@ -321,6 +373,18 @@ public class RootDialogConfig {
         OpenPanel = DialogLog.getOpenPanel();
         
         switch (OpenPanel) {
+            case "BankDb":
+                OpenBankDb(dialog, MainPanel);
+                break;
+            case "BankEdit":
+                OpenBankEdit(dialog, MainPanel);
+                break;
+            case "BankNew":
+                OpenBankNew(dialog, MainPanel);
+                break;
+            case "BankOptions":
+                OpenBankOptions(dialog, MainPanel);
+                break;
             case "ChangePassword":
                 OpenChangePassword(dialog, MainPanel);
                 break;
@@ -404,6 +468,22 @@ public class RootDialogConfig {
         width = dimension.width - (dimension.width/7);
         
         switch (OpenPanel) {
+            case "BankDb":
+                ViewDialog.AddAnimationRightToRight(dialog);
+                ViewDialog.SetDialog(dialog, width, height);
+                break;
+            case "BankEdit":
+                ViewDialog.AddAnimationRightToLeft(dialog);
+                ViewDialog.SetDialog(dialog, 400, 535);
+                break;
+            case "BankNew":
+                ViewDialog.AddAnimationLeftToLeft(dialog);
+                ViewDialog.SetDialog(dialog, 400, 535);
+                break;
+            case "BankOptions":
+                ViewDialog.AddAnimationTopToTop(dialog);
+                ViewDialog.SetDialog(dialog, 500, 400);
+                break;
             case "ChangePassword":
                 ViewDialog.AddAnimationLeftToLeft(dialog);
                 ViewDialog.SetDialog(dialog, 350, 375);

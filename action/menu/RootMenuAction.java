@@ -16,6 +16,17 @@ import java.awt.event.ActionListener;
  */
 public class RootMenuAction {
     
+    public static void BankOptions (
+        button buttonDaftarPerbankan
+    ) {
+        buttonDaftarPerbankan.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RootMenuConfig.BankOptions();
+            }
+        });
+    }
+    
     public static void ChangePassword (
         button buttonChangePassword
     ) {

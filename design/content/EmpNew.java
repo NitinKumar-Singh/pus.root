@@ -186,8 +186,7 @@ public class EmpNew extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonNext, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PanelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         labelID.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -250,7 +249,7 @@ public class EmpNew extends javax.swing.JPanel {
 
         labelTitle.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         labelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/male.png"))); // NOI18N
+        labelTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/lib/image32/blank-file.png"))); // NOI18N
         labelTitle.setText("{ TITLE }");
         labelTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         labelTitle.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
