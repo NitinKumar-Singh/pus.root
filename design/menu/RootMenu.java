@@ -26,6 +26,7 @@ public class RootMenu extends javax.swing.JPanel {
         RootMenuAction.ChangePassword(buttonChangePassword);
         RootMenuAction.Doc(buttonDaftarDokterBidan);
         RootMenuAction.EmpOptions(buttonDaftarPegawai);
+        RootMenuAction.NasabahOptions(buttonDaftarRekeningPegawai);
         RootMenuAction.OrgLevelOptions(buttonDaftarTingkatOrganisasi);
         RootMenuAction.ServiceCostOptions(buttonDaftarHargaLayanan);
     }

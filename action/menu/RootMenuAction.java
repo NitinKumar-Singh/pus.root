@@ -60,6 +60,17 @@ public class RootMenuAction {
         });
     }
     
+    public static void NasabahOptions (
+        button buttonDaftarRekeningPegawai
+    ) {
+        buttonDaftarRekeningPegawai.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RootMenuConfig.NasabahOptions();
+            }
+        });
+    }
+    
     public static void OrgLevelOptions (
         button buttonDaftarTingkatOrganisasi
     ) {

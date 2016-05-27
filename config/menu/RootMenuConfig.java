@@ -263,6 +263,57 @@ public class RootMenuConfig {
      */
     
     /**
+     * Start -> open db daftar nasabah bank
+     */
+    public static void NasabahDb () {
+        String OpenPanel, title;
+        OpenPanel = "NasabahDb";
+        title = "Daftar Rekening Pegawai";
+        
+        DialogLog.setOpenPanel(OpenPanel);
+        MessageLog.setTitle(title);
+        
+        RunDialogWebLookAndFeel();
+    }
+    /**
+     * End -> open db daftar nasabah bank
+     */
+    
+    /**
+     * Start -> new form nasabah
+     */
+    public static void NasabahNew () {
+        String OpenPanel, title;
+        OpenPanel = "NasabahNew";
+        title = "Rekening Bank";
+        
+        DialogLog.setOpenPanel(OpenPanel);
+        MessageLog.setTitle(title);
+        
+        RunDialogWebLookAndFeel();
+    }
+    /**
+     * End -> new form nasabah
+     */
+    
+    /**
+     * Start -> nasabah bank options
+     */
+    public static void NasabahOptions () {
+        String OpenPanel, title;
+        OpenPanel = "NasabahOptions";
+        title = "Nasabah Perbankan";
+        
+        DialogLog.setOpenPanel(OpenPanel);
+        MessageLog.setTitle(title);
+        
+        RunDialogNimbusLookAndFeel();
+    }
+    /**
+     * End -> nasabah bank options
+     */
+    
+    /**
      * Start -> open database of organization level
      */
     public static void OrgLevelDb () {

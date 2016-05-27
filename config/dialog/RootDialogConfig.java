@@ -22,6 +22,9 @@ import design.content.EmpEdit;
 import design.content.EmpEmpty;
 import design.content.EmpNew;
 import design.content.EmpOptions;
+import design.content.NasabahDb;
+import design.content.NasabahNew;
+import design.content.NasabahOptions;
 import design.content.OrgLevelDb;
 import design.content.OrgLevelEdit;
 import design.content.OrgLevelEmpty;
@@ -221,6 +224,42 @@ public class RootDialogConfig {
      */
     
     /**
+     * Start -> open db daftar nasabah bank
+     */
+    private static void OpenNasabahDb (Dialog dialog, JPanel MainPanel) {
+        NasabahDb nasabahDb;
+        nasabahDb = new NasabahDb(dialog);
+        ViewPanel.AddPanel(MainPanel, nasabahDb);
+    }
+    /**
+     * End -> open db daftar nasabah bank
+     */
+    
+    /**
+     * Start -> open new form nasabah bank
+     */
+    private static void OpenNasabahNew (Dialog dialog, JPanel MainPanel) {
+        NasabahNew nasabahNew;
+        nasabahNew = new NasabahNew(dialog);
+        ViewPanel.AddPanel(MainPanel, nasabahNew);
+    }
+    /**
+     * End -> open new form nasabah bank
+     */
+    
+    /**
+     * Start -> open nasabah bank options
+     */
+    private static void OpenNasabahOptions (Dialog dialog, JPanel MainPanel) {
+        NasabahOptions nasabahOptions;
+        nasabahOptions = new NasabahOptions(dialog);
+        ViewPanel.AddPanel(MainPanel, nasabahOptions);
+    }
+    /**
+     * End -> open nasabah bank options
+     */
+    
+    /**
      * Start -> open database of organization level
      */
     private static void OpenOrgLevelDb (Dialog dialog, JPanel MainPanel) {
@@ -415,6 +454,15 @@ public class RootDialogConfig {
             case "EmpOptions":
                 OpenEmpOptions(dialog, MainPanel);
                 break;
+            case "NasabahDb":
+                OpenNasabahDb(dialog, MainPanel);
+                break;
+            case "NasabahNew":
+                OpenNasabahNew(dialog, MainPanel);
+                break;
+            case "NasabahOptions":
+                OpenNasabahOptions(dialog, MainPanel);
+                break;
             case "OrgLevelDb":
                 OpenOrgLevelDb(dialog, MainPanel);
                 break;
@@ -521,6 +569,18 @@ public class RootDialogConfig {
                 ViewDialog.SetDialog(dialog, 350, 490);
                 break;
             case "EmpOptions":
+                ViewDialog.AddAnimationTopToTop(dialog);
+                ViewDialog.SetDialog(dialog, 500, 400);
+                break;
+            case "NasabahDb":
+                ViewDialog.AddAnimationRightToRight(dialog);
+                ViewDialog.SetDialog(dialog, width, height);
+                break;
+            case "NasabahNew":
+                ViewDialog.AddAnimationLeftToLeft(dialog);
+                ViewDialog.SetDialog(dialog, 350, 450);
+                break;
+            case "NasabahOptions":
                 ViewDialog.AddAnimationTopToTop(dialog);
                 ViewDialog.SetDialog(dialog, 500, 400);
                 break;
