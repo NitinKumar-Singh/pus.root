@@ -194,6 +194,51 @@ public class NasabahNewConfig {
      */
     
     /**
+     * Start -> check available rekening nasabah in db bank
+     */
+    private static void CheckRekening (
+        Dialog dialog, JPanel PanelMain, JPanel PanelDataPegawai,
+        JLabel labelNama, JLabel labelKelamin, JLabel labelKota,
+        JLabel labelTglLahir, JLabel labelKontak, JLabel labelAlamat
+    ) {
+        String nip, sql, message;
+        nip = UserActivityLog.getNip();
+        sql = "SELECT "
+                + "tbl_person.no_rekening AS `No. Rekening` "
+            + "FROM "
+                + "tbl_bank, "
+                + "tbl_bank_member, "
+                + "tbl_bank_type, "
+                + "tbl_person "
+            + "WHERE "
+                + "tbl_bank_member.id_bank = tbl_bank.id AND "
+                + "LEFT(tbl_bank.id, 2) = tbl_bank_type.id AND "
+                + "tbl_person.no_rekening = tbl_bank_member.no_rekening AND "
+                + "tbl_person.nip = '"+ nip +"';";
+        
+        resultSet = SQLAdapter.getData(sql);
+        
+        try {
+            if (resultSet.next()) {
+                message = ViewIDE.pesan_warning_bank_find_rekening_nasabah;
+                Pesan.Warning(message);
+            } else {
+                GoToDataPegawai(
+                    dialog,
+                    PanelMain, PanelDataPegawai,
+                    labelNama, labelKelamin, labelKota,
+                    labelTglLahir, labelKontak, labelAlamat
+                );
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    /**
+     * End -> check available rekening nasabah in db bank
+     */
+    
+    /**
      * Start -> close
      */
     public static void Close (Dialog dialog) {
@@ -225,6 +270,7 @@ public class NasabahNewConfig {
         nip = UserActivityLog.getNip();
         sql = "SELECT "
                 + "tbl_person.nip AS `NIP`, "
+                + "tbl_person.no_rekening AS `No. Rekening`, "
                 + "tbl_person.kota AS `Kota`, "
                 + "tbl_person.tgl_lahir AS `Tgl. Lahir`, "
                 + "tbl_person.kontak AS `No. Telepon`, "
@@ -240,13 +286,16 @@ public class NasabahNewConfig {
         
         try {
             if (resultSet.next()) {
-                String kota, tglLahir, kontak, alamat_rumah, alamat_kantor;
+                String norek, kota, tglLahir, kontak;
+                String alamat_rumah, alamat_kantor;
+                norek = resultSet.getString("No. Rekening");
                 kota = resultSet.getString("Kota");
                 tglLahir = resultSet.getString("Tgl. Lahir");
                 kontak = resultSet.getString("No. Telepon");
                 alamat_rumah = resultSet.getString("Alamat Rumah");
                 alamat_kantor = resultSet.getString("Alamat Kantor");
                 
+                UserActivityLog.setNorek(norek);
                 UserActivityLog.setKota(kota);
                 UserActivityLog.setTglLahir(tglLahir);
                 UserActivityLog.setKontak(kontak);
@@ -777,10 +826,18 @@ public class NasabahNewConfig {
         JLabel labelNama, JLabel labelKelamin, JLabel labelKota,
         JLabel labelTglLahir, JLabel labelKontak, JLabel labelAlamat
     ) {
-        String nip, sql;
-        nip = UserActivityLog.getNip();
+        /**
+         * Start -> get data pegawai
+         */
+        GetDataPegawai();
+        /**
+         * End -> get data pegawai
+         */
         
-        switch (nip) {
+        String norek;
+        norek = UserActivityLog.getNorek();
+        
+        switch (norek) {
             case "-":
                 GoToDataPegawai(
                     dialog,
@@ -790,7 +847,12 @@ public class NasabahNewConfig {
                 );
                 break;
             default:
-                
+                CheckRekening(
+                    dialog,
+                    PanelMain, PanelDataPegawai,
+                    labelNama, labelKelamin, labelKota,
+                    labelTglLahir, labelKontak, labelAlamat
+                );
                 break;
         }
     }
